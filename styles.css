@@ -1,0 +1,60 @@
+#game-board-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px; /* Ajout de la marge intérieure pour un espace autour du plateau */
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(7, 50px);
+    grid-template-rows: repeat(6, 50px);
+    gap: 5px;
+}
+
+.cell {
+    position: relative; /* Pour permettre le positionnement absolu des jetons */
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid blue; /* Ajout de la bordure bleue */
+}
+
+.player1::after,
+.player2::after {
+    content: ''; /* Ajouter un contenu vide pour permettre l'affichage des jetons */
+    position: absolute;
+    top: 50%; /* Placer le jeton au centre vertical de la cellule */
+    left: 50%; /* Placer le jeton au centre horizontal de la cellule */
+    transform: translate(-50%, -50%); /* Centrer le jeton */
+    width: 40px; /* Taille du jeton */
+    height: 40px; /* Taille du jeton */
+    border-radius: 50%; /* Rendre le jeton rond */
+}
+
+.player1::after {
+    background-color: yellow; /* Couleur du jeton du joueur 1 */
+}
+
+.player2::after {
+    background-color: red; /* Couleur du jeton du joueur 2 */
+}
+
+.player-color {
+    display: inline-block;
+    width: 20px; /* Ajustez la largeur selon vos besoins */
+    height: 20px; /* Ajustez la hauteur selon vos besoins */
+    margin-right: 5px; /* Espace entre la couleur et le texte */
+    border-radius: 50%; /* Pour rendre le cercle */
+    border: 2px solid black; /* Bordure noire autour de la couleur */
+}
+
+#player-info {
+    display: flex;
+    justify-content: space-between; /* Pour placer les éléments espacés de manière égale */
+}
+
+.player-info-item {
+    display: flex;
+    align-items: center; /* Pour aligner les éléments verticalement */
+}
